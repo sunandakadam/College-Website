@@ -1,0 +1,50 @@
+<form class="form col-md-4 col-md-offset-4"  [formGroup]="loginForm" 
+(ngSubmit)="OnSave(loginForm.value)">
+    <div class="form-group text-center">
+        <img src="../../assets/images/avatar2.png" class="img-circle">
+    </div>
+    <label for="email"><b>Email</b></label>
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-addon">
+                <span class="glyphicon glyphicon-envelope"></span>
+            </div>
+            <input name="user" class="form-control" [formControl]="loginForm.controls.user">
+        </div>
+        <div *ngIf="loginForm.controls['user'].errors?.required &&
+     (loginForm.controls['user'].touched ||
+     loginForm.controls['user'].dirty)" class="alert alert-danger">
+            This field is required
+        </div>
+        <div *ngIf="loginForm.controls['user'].errors?.pattern &&
+     (loginForm.controls['user'].touched ||
+     loginForm.controls['user'].dirty)" class="alert alert-danger">
+            Invalid Email
+        </div>
+    </div>
+
+    <label for="password"><b>Password</b></label>
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-addon">
+                <span class="glyphicon glyphicon-eye-close"></span>
+            </div>
+            <input name="password" type="password" class="form-control" [formControl]="loginForm.controls.password">
+        </div>
+        <div *ngIf="loginForm.controls['password'].errors?.required &&
+     (loginForm.controls['password'].touched ||
+     loginForm.controls['password'].dirty)" class="alert alert-danger">
+            This field is required
+        </div>
+    </div>
+
+    <div class="form-group text-center">
+        <button type="reset" class="btn btn-danger pull-left">Cancel&nbsp;&nbsp;
+            <i class="fa fa-times-circle-o" aria-hidden="true"></i>
+        </button>
+        <a href="#">Forget Password</a>
+        <button type="submit" class="btn btn-success pull-right">Login&nbsp;&nbsp;
+            <span class="glyphicon glyphicon-ok-circle"></span>
+        </button>
+    </div>
+</form>

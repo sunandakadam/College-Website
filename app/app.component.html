@@ -1,0 +1,16 @@
+<app-header></app-header>
+<div *ngIf="url != '/' && url!='login' && url !='register' ">
+  <app-dashboard></app-dashboard>
+   <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <!-- <b>Version</b> 2.4.0 -->
+    </div>
+    <strong>Copyright &copy; 2018
+      <a href="https://adminlte.io">GlitchBusters Technologies</a>.</strong> All rights reserved.
+  </footer>
+</div>
+
+<div *ngIf="url =='/' || url == 'login' || url == 'register'">
+  <router-outlet></router-outlet>
+</div>
