@@ -119,14 +119,16 @@
             </ul>
           </div>
           <!-- /btn-group -->
+          <!-- <form class="form" #f="ngForm" (ngSubmit)="OnSave(f.value)">
           <div class="input-group">
-            <input id="new-event" type="text" class="form-control" placeholder="Event Title">
+            <input id="new-event" ngModel name="eName" type="text" class="form-control" placeholder="Event Title">
 
             <div class="input-group-btn">
-              <button id="add-new-event" type="button" class="btn btn-primary btn-flat">Add</button>
+              <button id="add-new-event" type="submit" class="btn btn-primary btn-flat">Add</button>
             </div>
-            <!-- /btn-group -->
+            /btn-group 
           </div>
+        </form> -->
           <!-- /input-group -->
         </div>
       </div>

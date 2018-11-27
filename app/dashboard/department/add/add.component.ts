@@ -1,18 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AllService } from '../all.service';
-import * as $ from 'jquery';
-import { ActivatedRoute, Router } from '@angular/router';
+import {AllService} from '../../../all.service'
+import {Router,ActivatedRoute} from '@angular/router'
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['../login/login.component.css'],
-  providers: [AllService]
+  selector: 'app-add',
+  templateUrl: './add.component.html',
+  styleUrls: ['./add.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class AddComponent implements OnInit {
 
-  registerForm: FormGroup;
+registerForm: FormGroup;
   res: any;
   id: any;
   btn:any = "Register";

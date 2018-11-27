@@ -56,5 +56,11 @@ export class AllService {
       map((res: Response)=>{return res.json()})
     );
   }
+
+  addEvent(data){
+    return this._http.post("http://localhost/college_website/logic/eventupload.php",data).pipe(map((res)=>{
+      return res.json();
+    }));
+  }
 }
 
